@@ -1,0 +1,20 @@
+npx create-react-app -> create react app
+npm start -> start server
+npm install -> install libs
+
+Scroll Animation
+js file
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('class_name')
+        } else {
+            entry.target.classList.remove('class_name')
+        }
+    })
+});
+
+const hiddenElelements = document.querySelectorAll('.hidden');
+hiddenElelements.forEach((el) => observer.observe(el))
+

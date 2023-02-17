@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --bg-color: #162359;
+    --light-blue: #2C30B8;
+    --yellow: #FFD054;
+    --menu-link: 1.1em;
+    --title: 1.9em;
+    --sub-title: 1.6em;
+    --sm-title: .9em;
+    --radius: 10px;
+    --shadow-bottom: 0 5px 10px 0 rgba(0,0,0,0.4)
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.badge {
+    color: var(--yellow)
+}
+
+.numeric-badge {
+    border-radius: 50%;
+    border: 1px solid var(--yellow);
+    display: block;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 2em
+}
+
+.hidden {
+    display: none;
+}
+
+.header-nav {
+    padding: 10px 0;
+    background-color: transparent;
+}
+
+.navbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 12px 0;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .navbar-logo {
+    font-size: 2.2em;
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+.navbar .navbar-menu {
+    gap: 25px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar .navbar-menu .navbar-menu-item .navbar-menu-item__link {
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: var(--menu-link);
+}
+
+.navbar .navbar-menu .navbar-menu-item .navbar-menu-item__link:hover {
+    color: var(--yellow)
+}
+
+.navbar .navbar-button {
+    display: block;
+    color: white;
+    padding: 8px 30px;
+    transition: all 0.4s;
+    border: 1px solid white;
+    font-size: var(--menu-link);
+    border-radius: var(--radius)
+}
+
+.navbar .navbar-button:hover {
+    color: black;
+    background-color: white;
+}
+
+.navbar .navbar-burger {
+    gap: 5px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+    z-index: 111111;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.navbar .navbar-burger span {
+    width: 35px;
+    height: 3px;
+    background: var(--yellow);
+    transition: all 0.3s;
+    border-radius: var(--radius);
+}
+
+.navbar .navbar-burger.active span:first-child {
+    transform: translateX(-10px)
+}
+
+.navbar .navbar-burger.active span:last-child {
+    transform: translateX(10px)
+}
+
+.header-banner {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    min-height: 75vh;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-banner div {
+    width: calc(50% - 10px)
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-column: span;
+}
+
+.marque-card {
+    position: relative;
+    width: 100%;
+}
+
+.marque-card marquee {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    background-color: var(--light-blue);
+}
+
+.marque-card marquee .subjects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.marque-card marquee .subjects h3 {
+    transition: all 0.3s;
+    font-size: 1.5em;
+}
+
+.marque-card marquee .subjects h3:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+.yellow-card {
+    width: 100%;
+    height: 120px;
+    z-index: -111;
+    margin-top: -50px;
+    position: absolute;
+    transform: skewY(-5deg);
+    background-color: var(--yellow);
+}
+
+.history-table {
+    border-left: 5px solid white;
+    padding: 3px 0 10px 30px;
+}
+
+.history-table li {
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0 10px 10px 10px;
+    border-radius: var(--radius);
+}
+
+.history-table li:hover {
+    background-color: var(--light-blue);
+}
+
+.history-table li::marker {
+    font-size: 50px;
+}
+
+/* container */
+
+.container {
+    width: 90%;
+    /* padding: 0 10px; */
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 732px
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        width: 968px
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1128px;
+    }
+}
+
+/* media */
+@media screen and (max-width: 992px) {
+    .header-nav {
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 111111111;
+        backdrop-filter: blur(25px);
+        box-shadow: var(--shadow-bottom);
+        background-color: var(--bg-color);
+    }
+    .navbar .navbar-burger {
+        display: flex;
+    }
+    .navbar .navbar-menu {
+        right: 0;
+        gap: 20px;
+        top: -15px;
+        right: -100%;
+        width: 200px;
+        height: 100vh;
+        padding: 0 40px;
+        position: fixed;
+        text-align: right;
+        background: white;
+        transition: all 0.7s;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .navbar .navbar-menu.active {
+        right: 0;
+    }
+    .navbar .navbar-menu .navbar-menu-item .navbar-menu-item__link {
+        color: var(--bg-color);
+        width: 100%;
+        display: block;
+    }
+    .navbar .navbar-button {
+        display: none;
+    }
+    .header-banner {
+        margin-top: 100px
+    }
+    .hidden {
+        display: block;
+    }
+}
